@@ -1,0 +1,4 @@
+.env
+flight_price_crawler/__pycache__
+crawler/__pycache__
+.vscode
