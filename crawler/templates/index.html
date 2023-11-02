@@ -1,0 +1,159 @@
+<!-- templates/index.html -->
+
+{% extends "_base.html" %} {% block content %}
+
+<form method="POST">
+  {% csrf_token %}
+  <div
+    class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-950 dark:border-indigo-900 flex flex-col items-center my-[100px] mx-auto py-10"
+  >
+    <div class="mb-4 lg:flex lg:justify-between">
+      <div class="lg:w-[150px] lg:mr-6 mb-4 lg:mb-0">
+        <label
+          for="departure_city"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Leaving From:</label
+        >
+        <select
+          id="cities"
+          name="departure_city"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        >
+          <option value="DEL">Delhi</option>
+          <option value="BLR">Bengaluru</option>
+          <option value="BOM">Mumbai</option>
+          <option value="HYD">Hyderabad</option>
+        </select>
+      </div>
+      <div class="lg:w-[150px]">
+        <label
+          for="destination_city"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Going To:</label
+        >
+        <select
+          id="cities"
+          name="destination_city"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        >
+          <option value="BLR">Bengaluru</option>
+          <option value="DEL">Delhi</option>
+          <option value="BOM">Mumbai</option>
+          <option value="HYD">Hyderabad</option>
+        </select>
+      </div>
+    </div>
+    <label
+      for="date"
+      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      >Departure Date:</label
+    >
+    <div class="mb-4" name="date">{{ form.date }}</div>
+
+    {% comment %}
+    <label
+      for="traveler_type"
+      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      >Travellers:</label
+    >
+    <input
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      placeholder="Adults"
+      type="number"
+      min="0"
+      max="30"
+      step="1"
+    />
+    <input
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      placeholder="Children"
+      type="number"
+      min="0"
+      max="30"
+      step="1"
+    />
+    {% endcomment %}
+
+    <label
+      for="traveler_type"
+      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      >Travellers:</label
+    >
+    <input
+      type="number"
+      name="adults_count"
+      id="adults"
+      class="mb-2 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+      placeholder="Adults"
+      required
+    />
+
+    <input
+      type="number"
+      name="children_count"
+      id="children"
+      class="mb-2 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+      placeholder="Children"
+    />
+
+    <input
+      type="number"
+      name="infants_count"
+      id="infants"
+      class="mb-2 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+      placeholder="Infants"
+    />
+
+    {% comment %}
+    <label
+      for="traveler_type"
+      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      >Traveller:</label
+    >
+    <fieldset>
+      <legend class="sr-only">Traveller</legend>
+
+      <div class="flex items-center mb-4">
+        <input
+          id="traveller-option-1"
+          type="radio"
+          name="traveler_type"
+          value="Adult"
+          class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+          checked
+        />
+        <label
+          for="traveller-option-1"
+          class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          Adult
+        </label>
+      </div>
+
+      <div class="flex items-center mb-4">
+        <input
+          id="traveller-option-2"
+          type="radio"
+          name="traveler_type"
+          value="Child"
+          class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+        />
+        <label
+          for="traveller-option-2"
+          class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+        >
+          Child
+        </label>
+      </div>
+    </fieldset>
+    {% endcomment %}
+    <button
+      type="submit"
+      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+    >
+      Submit
+    </button>
+  </div>
+</form>
+
+{% endblock content %}
