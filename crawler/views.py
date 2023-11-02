@@ -23,5 +23,5 @@ def inputs(request):
     if request.method == 'GET':
         queryset = FlightInput.objects.all()
         data_as_list_of_dicts = list(queryset.values())
-        print(data_as_list_of_dicts)
-        return HttpResponse(data_as_list_of_dicts[0]["id"], data_as_list_of_dicts[0]["children_count"])
+        print(data_as_list_of_dicts[-1])
+        return HttpResponse(data_as_list_of_dicts[-1].values())

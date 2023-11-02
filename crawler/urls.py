@@ -5,5 +5,5 @@ from .views import flight_reservation, inputs
 
 urlpatterns = [
     path("", flight_reservation, name="index"),
-    path("get/", inputs)
+    path("inputs/", inputs)
 ]
