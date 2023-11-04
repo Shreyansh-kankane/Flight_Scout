@@ -1,2 +1,3 @@
-./flight_price_crawler/__pycache__
-./crawler/__pycache__
+flight_price_crawler/__pycache__
+crawler/__pycache__
+crawler/crawlers/__pycache__
