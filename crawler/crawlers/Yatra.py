@@ -78,8 +78,8 @@ def Yatra(source,destination,adults,children,infant,date,month,year):
             arrayofFlight.append(flightDetails)
             driver.close()
             i+=1
-        return arrayofFlight
         
 
     finally:
         driver.quit()
+        return arrayofFlight

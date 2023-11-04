@@ -78,8 +78,7 @@ def GoIbibo(source,destination,adults,children,infant,date,month,year):
                 driver.back()
                 time.sleep(30)
 
-        return arrayofFlight
                     
     finally:
         driver.quit()
-        Ixigo(source,destination,adults,children,infant,date,month,year)
+        return arrayofFlight

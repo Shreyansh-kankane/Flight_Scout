@@ -65,8 +65,7 @@ def Ixigo(source,destination,adults,children,infant,date,month,year):
             driver.close()
             arrayofFlight.append(flightDetails)
             i+=1
-        return arrayofFlight
             
     finally:
         driver.quit()
-        Yatra(source,destination,adults,children,infant,date,month,year)
+        return arrayofFlight

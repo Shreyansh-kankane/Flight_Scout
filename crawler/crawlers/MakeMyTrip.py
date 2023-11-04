@@ -72,8 +72,7 @@ def MakeMyTrip(source,destination,adults,children,infant,date,month,year):
             driver.switch_to.window(original_window)
             time.sleep(2)
             closeArrowTag=driver.find_element(By.XPATH,'//span[@class="customArrow arrowUp"]').click()
-        return arrayofFlight
             
     finally:
         driver.quit()
-        GoIbibo(source,destination,adults,children,infant,date,month,year)
+        return arrayofFlight
