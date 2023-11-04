@@ -19,7 +19,7 @@ def flight_reservation(request):
             queryset = FlightInput.objects.all()
             data_as_list_of_dicts = list(queryset.values())
             print(data_as_list_of_dicts[-1])
-            arrayofFlight=[]
+            arrayofFlight=[] 
             start_time = time.time()
             try:
                 # Departure
