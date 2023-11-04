@@ -1,6 +1,28 @@
 <!-- templates/index.html -->
 
 {% extends "_base.html" %} {% block content %}
+<section class="bg-white dark:bg-gray-900">
+  <div
+    class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12"
+  >
+    <div class="mr-auto place-self-center lg:col-span-7">
+      <h1
+        class="max-w-2xl mb-4 text-4xl font-bold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white"
+      >
+        Flight Price Comparator for Travel Enthusiasts
+      </h1>
+      <p
+        class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400"
+      >
+        Compare flight prices easily and save on your next adventure with our
+        Travel Enthusiast Price Comparator!
+      </p>
+    </div>
+    <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
+      <img src="http://127.0.0.1:8000/pictures/travel.svg" alt="mockup" />
+    </div>
+  </div>
+</section>
 
 <form method="POST">
   {% csrf_token %}
@@ -50,30 +72,6 @@
     >
     <div class="mb-4" name="date">{{ form.date }}</div>
 
-    {% comment %}
-    <label
-      for="traveler_type"
-      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-      >Travellers:</label
-    >
-    <input
-      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-      placeholder="Adults"
-      type="number"
-      min="0"
-      max="30"
-      step="1"
-    />
-    <input
-      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-      placeholder="Children"
-      type="number"
-      min="0"
-      max="30"
-      step="1"
-    />
-    {% endcomment %}
-
     <label
       for="traveler_type"
       class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -103,50 +101,6 @@
       class="mb-2 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
       placeholder="Infants"
     />
-
-    {% comment %}
-    <label
-      for="traveler_type"
-      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-      >Traveller:</label
-    >
-    <fieldset>
-      <legend class="sr-only">Traveller</legend>
-
-      <div class="flex items-center mb-4">
-        <input
-          id="traveller-option-1"
-          type="radio"
-          name="traveler_type"
-          value="Adult"
-          class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
-          checked
-        />
-        <label
-          for="traveller-option-1"
-          class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-        >
-          Adult
-        </label>
-      </div>
-
-      <div class="flex items-center mb-4">
-        <input
-          id="traveller-option-2"
-          type="radio"
-          name="traveler_type"
-          value="Child"
-          class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
-        />
-        <label
-          for="traveller-option-2"
-          class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-        >
-          Child
-        </label>
-      </div>
-    </fieldset>
-    {% endcomment %}
     <button
       type="submit"
       class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
