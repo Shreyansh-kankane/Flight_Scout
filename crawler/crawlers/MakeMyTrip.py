@@ -2,13 +2,13 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 import time
-import random
+import random   
 
 arrayofFlight=[]
 def MakeMyTrip(source,destination,adults,children,infant,date,month,year):
     try:
         print("Make My Trip")
-        options = webdriver.ChromeOptions()
+        options = webdriver.ChromeOptions() 
         options.add_argument("--ignore-certificate-errors")
         options.add_argument("--headless")
         options.add_experimental_option("excludeSwitches", ["enable-automation"])
@@ -18,7 +18,7 @@ def MakeMyTrip(source,destination,adults,children,infant,date,month,year):
         options.add_argument("user-agent=Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147."+userAgent[random_integer]+" Safari/537.36")
 
 
-        service = Service(executable_path='chromedriver.exe')
+        service = Service(executable_path='chromedriver.exe') 
         startTime = time.time()
 
         driver = webdriver.Chrome(service=service, options=options)
