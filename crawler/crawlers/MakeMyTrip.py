@@ -74,5 +74,6 @@ def MakeMyTrip(source,destination,adults,children,infant,date,month,year):
             closeArrowTag=driver.find_element(By.XPATH,'//span[@class="customArrow arrowUp"]').click()
             
     finally:
+        print("Error")
         driver.quit()
         return arrayofFlight

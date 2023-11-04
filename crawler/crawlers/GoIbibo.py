@@ -14,7 +14,7 @@ def GoIbibo(source,destination,adults,children,infant,date,month,year):
         options = webdriver.ChromeOptions()
 
         options.add_argument("--ignore-certificate-errors")
-        # options.add_argument("--headless")
+        options.add_argument("--headless")
         options.add_argument(f"--window-size=1920,1800")
         options.add_experimental_option("excludeSwitches", ["enable-automation"])
         options.add_experimental_option("useAutomationExtension", False)

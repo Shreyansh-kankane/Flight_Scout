@@ -39,9 +39,9 @@ def flight_reservation(request):
                 infants=data_as_list_of_dicts[-1]["infants_count"] 
                 
                 arrayofFlight += MakeMyTrip(source,destination,adults,children,infants,day,month,year)
-                # arrayofFlight += GoIbibo(source,destination,adults,children,infants,day,month,year)
-                # arrayofFlight += Ixigo(source,destination,adults,children,infants,day,month,year)
-                # arrayofFlight += Yatra(source,destination,adults,children,infants,day,month,year)
+                arrayofFlight += GoIbibo(source,destination,adults,children,infants,day,month,year)
+                arrayofFlight += Ixigo(source,destination,adults,children,infants,day,month,year)
+                arrayofFlight += Yatra(source,destination,adults,children,infants,day,month,year)
             finally:
                 jsonofFlight=json.dumps(arrayofFlight)
 
