@@ -4,3 +4,4 @@ django-compressor
 selenium
 beautifulsoup4
 requests
+psycopg2
