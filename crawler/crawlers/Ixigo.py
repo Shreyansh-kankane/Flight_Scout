@@ -19,6 +19,7 @@ def Ixigo(source,destination,adults,children,infant,date,month,year):
         options.add_experimental_option("excludeSwitches", ["enable-automation"])
         options.add_experimental_option("useAutomationExtension", False)
         userAgent=["53","97","125","45","74"]
+
         i=0
         while i<=4:
             flightDetails={}
@@ -56,6 +57,7 @@ def Ixigo(source,destination,adults,children,infant,date,month,year):
             priceTag=driver.find_elements(By.XPATH, '//div[@class="price"]')[i]
             price=priceTag.text.split("\n")[0].split(" ")[0].split(",")
             price="".join(price)
+            
             flightDetails["price"]=price
             buttonTag=driver.find_elements(By.XPATH,'//div[@class="book-cta"]')[i]
             buttonTag.click()
